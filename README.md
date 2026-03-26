@@ -8,7 +8,6 @@ Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El
 
 > *Captura de pantalla real de los mensajes segmentados por colores y emojis según la proximidad del objeto detectado.*
 
-### 🗺️ Diagrama del Circuito
 ![Diagrama Wokwi](docs/circuit_diagram.png)
 
 ## 🛠️ Stack Tecnológico
