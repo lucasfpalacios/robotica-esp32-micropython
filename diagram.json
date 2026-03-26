@@ -10,15 +10,25 @@
       "left": 139.24,
       "attrs": { "env": "micropython-20231227-v1.22.0" }
     },
-    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -180.9, "left": -138.5, "attrs": {} }
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -276.9,
+      "left": -128.9,
+      "attrs": { "distance": "80" }
+    },
+    { "type": "wokwi-servo", "id": "servo1", "top": -30.8, "left": 364.8, "attrs": {} }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
     [ "esp:RX", "$serialMonitor:TX", "", [] ],
     [ "esp:5V", "ultrasonic1:VCC", "red", [ "h0" ] ],
-    [ "ultrasonic1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "ultrasonic1:GND", "esp:GND.2", "black", [ "v19.2", "h267.6" ] ],
     [ "ultrasonic1:TRIG", "esp:5", "green", [ "v0" ] ],
-    [ "esp:18", "ultrasonic1:ECHO", "green", [ "h0" ] ]
+    [ "esp:18", "ultrasonic1:ECHO", "green", [ "h0" ] ],
+    [ "esp:GND.3", "servo1:GND", "black", [ "h76.8", "v38.4" ] ],
+    [ "esp:5V", "servo1:V+", "red", [ "v38.4", "h163.35", "v-105.7" ] ],
+    [ "esp:13", "servo1:PWM", "green", [ "h-67.05", "v-172.8", "h259.2", "v153.6" ] ]
   ],
   "dependencies": {}
 }
