@@ -8,8 +8,7 @@ Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El
 
 ### 🗺️ Diagrama de Conexiones de Hardware
 
-# --- LA LÍNEA CRÍTICA ESTÁ ACÁ ---
-![Diagrama del Circuito](docs/diagrama_wokwi.png)
+![Diagrama del Circuito]([docs/diagrama_wokwi.png]([https://wokwi.com/projects/459572819055822849](https://imgur.com/a/CmEToeI)))
 
 > *Representación visual de las conexiones de hardware en la plataforma de simulación Wokwi.*
 
