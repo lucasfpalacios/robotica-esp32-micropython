@@ -6,15 +6,11 @@ Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El
 
 ## 📺 Demostración del Proyecto
 
-Para validar el funcionamiento del sistema, se implementó una simulación que recorre los diferentes niveles de alerta (Aviso, Advertencia y Crítica).
+### ⚙️ Funcionamiento del Radar (Simulación)
+![Simulación del Radar](docs/bot_demo.gif)
 
-### ⚙️ Funcionamiento del Radar (GIF)
-![Simulación del Radar](docs/alert_demo.gif)
-
-> *En el GIF se observa el barrido del servomotor y cómo el LCD actualiza la distancia virtual y el ángulo en tiempo real.*
-
-### 📱 Notificaciones en Telegram (Imagen)
-![Alertas Recibidas](docs/circuit_diagrama.png)
+### 📱 Alertas Recibidas en Telegram
+![Evidencia de Mensajes](docs/circuit_diagram.png)
 
 > *Captura de pantalla real de los mensajes segmentados por colores y emojis según la proximidad del objeto detectado.*
 
