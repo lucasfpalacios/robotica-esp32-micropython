@@ -15,9 +15,23 @@
       "id": "ultrasonic1",
       "top": -276.9,
       "left": -128.9,
-      "attrs": { "distance": "80" }
+      "attrs": { "distance": "86" }
     },
-    { "type": "wokwi-servo", "id": "servo1", "top": -30.8, "left": 364.8, "attrs": {} }
+    { "type": "wokwi-servo", "id": "servo1", "top": -30.8, "left": 364.8, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -243.6,
+      "left": 157.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -178.45,
+      "left": 288,
+      "attrs": { "value": "1000" }
+    }
   ],
   "connections": [
     [ "esp:TX", "$serialMonitor:RX", "", [] ],
@@ -28,7 +42,10 @@
     [ "esp:18", "ultrasonic1:ECHO", "green", [ "h0" ] ],
     [ "esp:GND.3", "servo1:GND", "black", [ "h76.8", "v38.4" ] ],
     [ "esp:5V", "servo1:V+", "red", [ "v38.4", "h163.35", "v-105.7" ] ],
-    [ "esp:13", "servo1:PWM", "green", [ "h-67.05", "v-172.8", "h259.2", "v153.6" ] ]
+    [ "esp:13", "servo1:PWM", "green", [ "h-67.05", "v-172.8", "h259.2", "v153.6" ] ],
+    [ "r1:1", "led1:A", "green", [ "v0" ] ],
+    [ "r1:2", "esp:12", "green", [ "v38.4", "h-231.6", "v172.8" ] ],
+    [ "led1:C", "esp:GND.2", "green", [ "v19.2", "h86.8", "v105.6" ] ]
   ],
   "dependencies": {}
 }
