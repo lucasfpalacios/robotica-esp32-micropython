@@ -4,6 +4,9 @@
 
 Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El dispositivo realiza un escaneo perimetral de 180°, detecta presencia mediante ultrasonido y notifica alertas inteligentes vía **Telegram API**.
 
+### 📱 Evidencia de Funcionamiento (Telegram)
+![Alertas de Seguridad](docs/image_5bc106.png)
+
 ## 🛠️ Stack Tecnológico
 - **Hardware:** ESP32, Sensor HC-SR04, Servo SG90, LCD 16x2 (I2C).
 - **Firmware:** MicroPython.
