@@ -3,7 +3,7 @@
 # 📡 Radar IoT de Seguridad con Alertas Multinivel
 
 Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El dispositivo realiza un escaneo perimetral de 180°, detecta presencia mediante ultrasonido y notifica alertas inteligentes vía **Telegram API**.
-https://github.com/lucasfpalacios/robotica-esp32-micropython/blob/main/Radar-IoT-Security/docs/diagrama_wokwi.png
+
 ## 🛠️ Stack Tecnológico
 - **Hardware:** ESP32, Sensor HC-SR04, Servo SG90, LCD 16x2 (I2C).
 - **Firmware:** MicroPython.
