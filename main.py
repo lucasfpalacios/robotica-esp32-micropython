@@ -1,18 +1,14 @@
 from machine import Pin, PWM, time_pulse_us
 import time
 
-# Configuración Sensor Ultrasonido
+# --- CONFIGURACIÓN ---
 trig = Pin(5, Pin.OUT)
 echo = Pin(18, Pin.IN)
-
-# Configuración Servomotor (PWM en Pin 13)
-# Frecuencia típica de servos: 50Hz
 servo = PWM(Pin(13), freq=50)
 
 def set_angle(angle):
-    # Convierte grados (0-180) a Duty Cycle para MicroPython
-    # El rango suele ser entre 20 y 120 para 50Hz en ESP32
-    duty = int((angle / 180) * 100 + 26)
+    # Mapeo de 0-180 grados a duty cycle (26 a 123 aprox)
+    duty = int((angle / 180) * 97 + 26)
     servo.duty(duty)
 
 def medir_distancia():
@@ -22,18 +18,22 @@ def medir_distancia():
     time.sleep_us(10)
     trig.value(0)
     duracion = time_pulse_us(echo, 1)
-    return (duracion * 0.0343) / 2
+    dist = (duracion * 0.0343) / 2
+    return dist
 
-print("--- Radar con Servo Iniciado ---")
+print("--- MODO EXPLORACIÓN ACTIVADO ---")
 
 while True:
-    dist = medir_distancia()
-    print("Distancia: {:.2f} cm".format(dist))
-    
-    if dist < 20:
-        print("¡Obstáculo! Girando servo...")
-        set_angle(180) # Mueve el servo a un extremo
-    else:
-        set_angle(90)  # Vuelve al centro
+    # Barrido de 0 a 180 grados
+    for angulo in range(0, 181, 10): # Salta de 10 en 10 grados
+        set_angle(angulo)
+        distancia = medir_distancia()
         
-    time.sleep(0.2)
+        print("Ángulo: {}° | Distancia: {:.1f} cm".format(angulo, distancia))
+        
+        if distancia < 30:
+            print(">>> ¡OBJETO DETECTADO A {} CM! <<<".format(distancia))
+            # Podés agregar una pausa o un sonido aquí
+            time.sleep(1) 
+            
+        time.sleep(0.1)
