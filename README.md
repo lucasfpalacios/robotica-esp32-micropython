@@ -1,7 +1,5 @@
 # robotica-esp32-micropython
 
-# Link al proyecto: https://wokwi.com/projects/459572819055822849
-
 # 🤖 Radar de Proximidad con ESP32 y MicroPython
 
 Este proyecto consiste en un sistema de detección de obstáculos automatizado utilizando un microcontrolador **ESP32**. El sistema simula un radar que realiza un barrido de 180° buscando objetos y emite una alerta visual mediante un LED intermitente cuando detecta una proximidad menor a 20 cm.
@@ -29,9 +27,10 @@ Este proyecto consiste en un sistema de detección de obstáculos automatizado u
 | **LED Alerta** | GPIO 12 | Salida digital |
 
 ## 💻 Instalación y Uso
-1.  Clonar este repositorio.
-2.  Importar el archivo `diagram.json` y `main.py` en [Wokwi](https://wokwi.com).
-3.  Iniciar la simulación y mover el slider del sensor para probar la detección.
+1. Clonar este repositorio.
+2. Acceder al simulador interactivo en el siguiente link:
+   👉 [Simulación en Wokwi](https://wokwi.com/projects/459572819055822849)
+3. Iniciar la simulación y mover el slider del sensor para probar la detección.
 
 ## 🧠 Lógica de Control
 El algoritmo principal utiliza un bucle de exploración que mapea ángulos de 0° a 180°. En cada paso, se calcula la distancia mediante la fórmula:
