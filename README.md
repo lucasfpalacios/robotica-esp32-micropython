@@ -23,4 +23,4 @@ El sistema no solo detecta, sino que clasifica el riesgo para reducir la fatiga 
 1. Clonar el repositorio.
 2. Configurar el `TOKEN` y `CHAT_ID` en `main.py`.
 3. Cargar los archivos a la ESP32 usando Thonny o VS Code (Pymakr).
-4. Acceder a la simulación en Wokwi aquí: [Link a tu proyecto de Wokwi]
+4. Acceder a la simulación en Wokwi aquí: [[Proyecto de Wokwi](https://wokwi.com/projects/459572819055822849)]
