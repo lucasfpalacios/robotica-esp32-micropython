@@ -1,11 +1,11 @@
 from machine import Pin, PWM, time_pulse_us
 import time
 
-# --- CONFIGURACIÓN DE PINES ---
+# --- CONFIGURACIÓN ---
 trig = Pin(5, Pin.OUT)
 echo = Pin(18, Pin.IN)
 servo = PWM(Pin(13), freq=50)
-led_alerta = Pin(12, Pin.OUT) # El nuevo LED de alarma
+led_alerta = Pin(12, Pin.OUT)
 
 def set_angle(angle):
     duty = int((angle / 180) * 97 + 26)
@@ -20,21 +20,24 @@ def medir_distancia():
     duracion = time_pulse_us(echo, 1)
     return (duracion * 0.0343) / 2
 
-print("--- SISTEMA DE RADAR CON ALERTA VISUAL ---")
+print("--- RADAR ACTIVO: MODO ALERTA INTERMITENTE ---")
 
 while True:
-    for angulo in range(0, 181, 15): # Barrido de 15 en 15 grados
+    for angulo in range(0, 181, 15):
         set_angle(angulo)
-        distancia = medir_distancia()
+        dist = medir_distancia()
         
-        print(f"Ángulo: {angulo}° | Distancia: {distancia:.1f} cm")
+        print(f"Ángulo: {angulo}° | Distancia: {dist:.1f} cm")
         
-        # Lógica de Alerta
-        if distancia < 20:
-            print("¡PELIGRO! Objeto detectado.")
-            led_alerta.value(1)  # Enciende el LED
-            time.sleep(0.5)      # Pausa para que se note la detección
+        if dist < 20:
+            print(">>> ¡OBJETO DETECTADO! <<<")
+            # Efecto de titileo (Blink)
+            for _ in range(3): 
+                led_alerta.value(1)
+                time.sleep(0.1)
+                led_alerta.value(0)
+                time.sleep(0.1)
         else:
-            led_alerta.value(0)  # Apaga el LED
+            led_alerta.value(0)
             
-        time.sleep(0.1)
+        time.sleep(0.05)
