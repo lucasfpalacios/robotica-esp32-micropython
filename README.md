@@ -6,7 +6,7 @@ Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El
 
 ## 🗺️ Diagrama del Circuito
 
-![Diagrama Wokwi](docs/circuit_diagram.png)
+![Diagrama Wokwi](~/docs/circuit_diagram.png)
 
 > *Representación visual de las conexiones de hardware en la plataforma de simulación Wokwi.*
 
