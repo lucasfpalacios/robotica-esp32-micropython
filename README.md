@@ -4,11 +4,19 @@
 
 Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El dispositivo realiza un escaneo perimetral de 180°, detecta presencia mediante ultrasonido y notifica alertas inteligentes vía **Telegram API**.
 
-### 📱 Evidencia de Funcionamiento (Telegram)
-![Alertas de Seguridad]([docs/circuit_diagrama.png])
+## 📺 Demostración del Proyecto
 
-## 📱 Alertas en Tiempo Real
-![Evidencia Telegram](docs/alert_demo.gif)
+Para validar el funcionamiento del sistema, se implementó una simulación que recorre los diferentes niveles de alerta (Aviso, Advertencia y Crítica).
+
+### ⚙️ Funcionamiento del Radar (GIF)
+![Simulación del Radar](docs/alert_demo.gif)
+
+> *En el GIF se observa el barrido del servomotor y cómo el LCD actualiza la distancia virtual y el ángulo en tiempo real.*
+
+### 📱 Notificaciones en Telegram (Imagen)
+![Alertas Recibidas](docs/circuit_diagrama.png)
+
+> *Captura de pantalla real de los mensajes segmentados por colores y emojis según la proximidad del objeto detectado.*
 
 ## 🛠️ Stack Tecnológico
 - **Hardware:** ESP32, Sensor HC-SR04, Servo SG90, LCD 16x2 (I2C).
