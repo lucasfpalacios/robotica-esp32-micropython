@@ -4,14 +4,10 @@
 
 Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El dispositivo realiza un escaneo perimetral de 180°, detecta presencia mediante ultrasonido y notifica alertas inteligentes vía **Telegram API**.
 
-## 📺 Demostración del Proyecto
-
 ### ⚙️ Funcionamiento del Radar (Simulación)
-![Simulación del Radar](docs/bot_demo.gif)
 
-### 📱 Alertas Recibidas en Telegram
-![Evidencia de Mensajes](docs/circuit_diagram.png)
-
+### 🗺️ Diagrama del Circuito
+![Diagrama Wokwi](docs/circuit_diagram.png)
 > *Captura de pantalla real de los mensajes segmentados por colores y emojis según la proximidad del objeto detectado.*
 
 ## 🛠️ Stack Tecnológico
