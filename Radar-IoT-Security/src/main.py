@@ -23,7 +23,6 @@ def conectar_wifi():
     lcd.clear(); lcd.putstr("WiFi: Online"); time.sleep(1)
 
 def enviar_telegram(distancia):
-    # Lógica de rangos ajustada para que el "Amarillo" tenga más espacio
     if distancia < 6:
         nivel, accion = "🔴 CRITICO", "¡INTRUSO SOBRE EL SENSOR!"
     elif 6 <= distancia < 15:
