@@ -1,41 +1,26 @@
 # robotica-esp32-micropython
 
-# 🤖 Radar de Proximidad con ESP32 y MicroPython
+# 📡 Radar IoT de Seguridad con Alertas Multinivel
 
-Este proyecto consiste en un sistema de detección de obstáculos automatizado utilizando un microcontrolador **ESP32**. El sistema simula un radar que realiza un barrido de 180° buscando objetos y emite una alerta visual mediante un LED intermitente cuando detecta una proximidad menor a 20 cm.
+Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El dispositivo realiza un escaneo perimetral de 180°, detecta presencia mediante ultrasonido y notifica alertas inteligentes vía **Telegram API**.
 
-![Simulación del Proyecto](./dashboard.png)
+## 🛠️ Stack Tecnológico
+- **Hardware:** ESP32, Sensor HC-SR04, Servo SG90, LCD 16x2 (I2C).
+- **Firmware:** MicroPython.
+- **Integraciones:** Telegram Bot API (REST), Wi-Fi (Sistemas Embebidos).
 
-## 🚀 Características Técnicas
-* **Microcontrolador:** ESP32.
-* **Lenguaje:** MicroPython.
-* **Simulación:** [Wokwi](https://wokwi.com).
-* **Protocolos:** PWM para control de servomotor y señales digitales para sensor de ultrasonido.
+## 🧠 Lógica de Alerta Inteligente
+El sistema no solo detecta, sino que clasifica el riesgo para reducir la fatiga de alertas:
+- **🔵 Nivel Aviso (>15cm):** Presencia detectada en el perímetro.
+- **🟡 Nivel Advertencia (6-15cm):** Acercamiento sospechoso.
+- **🔴 Nivel Crítico (<6cm):** Intrusión inminente - Alerta máxima.
 
-## 🛠️ Componentes Utilizados
-1.  **Sensor HC-SR04:** Sensor de ultrasonido para medir distancias.
-2.  **Servomotor SG90:** Encargado de rotar el sensor para ampliar el rango de visión.
-3.  **LED de Alerta:** Indicador visual de proximidad crítica.
-4.  **Resistencia 220Ω:** Protección para el LED.
+## 📁 Estructura del Proyecto
+- `src/main.py`: Lógica principal, control de periféricos y comunicación Cloud.
+- `lib/`: Librerías de terceros para el manejo de protocolos específicos (I2C LCD).
 
-## 🔌 Diagrama de Conexiones
-| Componente | Pin ESP32 | Función |
-| :--- | :--- | :--- |
-| **HC-SR04 Trig** | GPIO 5 | Disparo de pulso |
-| **HC-SR04 Echo** | GPIO 18 | Recepción de eco |
-| **Servo PWM** | GPIO 13 | Control de posición |
-| **LED Alerta** | GPIO 12 | Salida digital |
-| Buzzer | GPIO 14 | Alarma sonora (PWM) |
-
-## 💻 Instalación y Uso
-1. Clonar este repositorio.
-2. Acceder al simulador interactivo en el siguiente link:
-   👉 [Simulación en Wokwi](https://wokwi.com/projects/459572819055822849)
-3. Iniciar la simulación y mover el slider del sensor para probar la detección.
-
-## 🧠 Lógica de Control
-El algoritmo principal utiliza un bucle de exploración que mapea ángulos de 0° a 180°. En cada paso, se calcula la distancia mediante la fórmula:
-
-> **Distancia = (Tiempo × 0.0343) / 2**
-
-Si la distancia es inferior al umbral de seguridad, se activa una subrutina de parpadeo (blink) en el LED de alerta.
+## 🚀 Cómo replicar este proyecto
+1. Clonar el repositorio.
+2. Configurar el `TOKEN` y `CHAT_ID` en `main.py`.
+3. Cargar los archivos a la ESP32 usando Thonny o VS Code (Pymakr).
+4. Acceder a la simulación en Wokwi aquí: [Link a tu proyecto de Wokwi]
