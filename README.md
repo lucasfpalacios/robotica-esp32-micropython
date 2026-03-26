@@ -4,14 +4,6 @@
 
 Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El dispositivo realiza un escaneo perimetral de 180°, detecta presencia mediante ultrasonido y notifica alertas inteligentes vía **Telegram API**.
 
-### ⚙️ Funcionamiento del Radar (Simulación)
-
-### 🗺️ Diagrama de Conexiones de Hardware
-
-![Diagrama del Circuito]([docs/diagrama_wokwi.png]([https://wokwi.com/projects/459572819055822849](https://imgur.com/a/CmEToeI)))
-
-> *Representación visual de las conexiones de hardware en la plataforma de simulación Wokwi.*
-
 ## 🛠️ Stack Tecnológico
 - **Hardware:** ESP32, Sensor HC-SR04, Servo SG90, LCD 16x2 (I2C).
 - **Firmware:** MicroPython.
