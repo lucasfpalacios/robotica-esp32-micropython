@@ -39,6 +39,3 @@ El algoritmo principal utiliza un bucle de exploración que mapea ángulos de 0�
 > **Distancia = (Tiempo × 0.0343) / 2**
 
 Si la distancia es inferior al umbral de seguridad, se activa una subrutina de parpadeo (blink) en el LED de alerta.
-
-
-<img width="1305" height="924" alt="image" src="https://github.com/user-attachments/assets/9a050c6c-d50f-4ff3-9801-2a9b57a70930" />
