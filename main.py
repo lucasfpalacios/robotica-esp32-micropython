@@ -1,36 +1,39 @@
-import machine
+from machine import Pin, PWM, time_pulse_us
 import time
 
-# Configuración de Pines
-trigger = machine.Pin(5, machine.Pin.OUT)
-echo = machine.Pin(18, machine.Pin.IN)
+# Configuración Sensor Ultrasonido
+trig = Pin(5, Pin.OUT)
+echo = Pin(18, Pin.IN)
 
-def get_distance():
-    # Asegurar que el trigger esté apagado
-    trigger.value(0)
+# Configuración Servomotor (PWM en Pin 13)
+# Frecuencia típica de servos: 50Hz
+servo = PWM(Pin(13), freq=50)
+
+def set_angle(angle):
+    # Convierte grados (0-180) a Duty Cycle para MicroPython
+    # El rango suele ser entre 20 y 120 para 50Hz en ESP32
+    duty = int((angle / 180) * 100 + 26)
+    servo.duty(duty)
+
+def medir_distancia():
+    trig.value(0)
     time.sleep_us(2)
-    
-    # Enviar un pulso de 10 microsegundos
-    trigger.value(1)
+    trig.value(1)
     time.sleep_us(10)
-    trigger.value(0)
-    
-    # Medir el tiempo que el pin Echo está en alto (1)
-    duracion = machine.time_pulse_us(echo, 1)
-    
-    # Calcular distancia (Velocidad del sonido / 2)
-    distancia = (duracion * 0.0343) / 2
-    return distancia
+    trig.value(0)
+    duracion = time_pulse_us(echo, 1)
+    return (duracion * 0.0343) / 2
 
-print("Iniciando sensor de proximidad...")
+print("--- Radar con Servo Iniciado ---")
 
 while True:
-    d = get_distance()
-    print("Distancia: {:.2f} cm".format(d))
+    dist = medir_distancia()
+    print("Distancia: {:.2f} cm".format(dist))
     
-    # Lógica de robot:
-    if d < 20:
-        print("¡OBSTÁCULO DETECTADO! Girando...")
-    
-    time.sleep(0.5)
-    
+    if dist < 20:
+        print("¡Obstáculo! Girando servo...")
+        set_angle(180) # Mueve el servo a un extremo
+    else:
+        set_angle(90)  # Vuelve al centro
+        
+    time.sleep(0.2)
