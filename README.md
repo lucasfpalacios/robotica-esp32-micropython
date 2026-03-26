@@ -6,9 +6,15 @@ Sistema de vigilancia autónomo desarrollado con **ESP32** y **MicroPython**. El
 
 ## 🗺️ Diagrama del Circuito
 
-> *Captura de pantalla real de los mensajes segmentados por colores y emojis según la proximidad del objeto detectado.*
-
 ![Diagrama Wokwi](docs/circuit_diagram.png)
+
+> *Representación visual de las conexiones de hardware en la plataforma de simulación Wokwi.*
+
+## 📱 Evidencia de Funcionamiento (Telegram)
+
+![Alertas de Seguridad](docs/wokwi_setup.png)
+
+> *Captura de pantalla real de los mensajes segmentados por colores y emojis según la proximidad del objeto detectado.*
 
 ## 🛠️ Stack Tecnológico
 - **Hardware:** ESP32, Sensor HC-SR04, Servo SG90, LCD 16x2 (I2C).
@@ -30,3 +36,6 @@ El sistema no solo detecta, sino que clasifica el riesgo para reducir la fatiga 
 2. Configurar el `TOKEN` y `CHAT_ID` en `main.py`.
 3. Cargar los archivos a la ESP32 usando Thonny o VS Code (Pymakr).
 4. Acceder a la simulación en Wokwi aquí: [[Proyecto de Wokwi](https://wokwi.com/projects/459572819055822849)]
+
+---
+*Desarrollado por [Tu Nombre] - Rosario, Argentina 🇦🇷*
