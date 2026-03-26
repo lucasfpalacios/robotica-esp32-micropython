@@ -26,7 +26,6 @@ Este proyecto consiste en un sistema de detección de obstáculos automatizado u
 | **Servo PWM** | GPIO 13 | Control de posición |
 | **LED Alerta** | GPIO 12 | Salida digital |
 | Componente | Pin ESP32 | Función |
-| :--- | :--- | :--- |
 | Buzzer | GPIO 14 | Alarma sonora (PWM) |
 
 ## 💻 Instalación y Uso
