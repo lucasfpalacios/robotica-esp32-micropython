@@ -26,4 +26,4 @@ El sistema no solo detecta, sino que clasifica el riesgo para reducir la fatiga 
 4. Acceder a la simulación en Wokwi aquí: [[Proyecto de Wokwi](https://wokwi.com/projects/459572819055822849)]
 
 ---
-*Desarrollado por [Tu Nombre] - Rosario, Argentina 🇦🇷*
+
